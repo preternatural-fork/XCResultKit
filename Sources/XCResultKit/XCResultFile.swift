@@ -145,7 +145,7 @@ public class XCResultFile {
 		// xcrun version 70 ships a new version of xcresulttool. Ensure compatibility.
 		if let versionData = xcrun(["--version"]), let versionString = String(data: versionData, encoding: .ascii) {
 			let scanner = Scanner(string: versionString)
-			scanner.scanString("xcrun version ")
+            _ = scanner.scanString("xcrun version ")
 
 			if let version = scanner.scanDouble(), version >= 70.0 {
 				appendLegacy = true

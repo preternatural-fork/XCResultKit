@@ -11,6 +11,7 @@ import Foundation
 func logError(_ message: String) {
     #if DEBUG
         if let data = "\(message)\n".data(using: .utf8) {
+            _ = data
             /// Don't log anything
             // FileHandle.standardError.write(data)
         }
